@@ -1,14 +1,26 @@
 
+:root {
+    --bg-color: #ffffff;
+    --text-color: #002855;
+    --link-color: #0072ce;
+}
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --link-color: #66b2ff;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: white;
-    color: #002855;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 850px;
     margin: auto;
     padding: 2em;
 }
@@ -18,13 +30,15 @@ header {
     margin-bottom: 2em;
 }
 
-header h1 {
-    color: #002855;
-    margin-bottom: 0.2em;
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1em;
 }
 
 nav a {
-    color: #0072ce;
+    color: var(--link-color);
     margin: 0 0.5em;
     text-decoration: none;
 }
@@ -34,5 +48,5 @@ section {
 }
 
 h2 {
-    color: #004080;
+    color: var(--link-color);
 }
