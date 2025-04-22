@@ -9,18 +9,34 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const savedTheme = localStorage.getItem("theme") || "light";
-      document.documentElement.setAttribute("data-theme", savedTheme);
-      document.getElementById("theme-toggle").checked = savedTheme === "dark";
+      const toggle = document.getElementById("theme-toggle");
+      const icon = document.getElementById("theme-icon");
 
-      document.getElementById("theme-toggle").addEventListener("change", (e) => {
-        const newTheme = e.target.checked ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
+      const applyTheme = (theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        icon.textContent = theme === "dark" ? "🌙" : "🌞";
+      };
+
+      applyTheme(savedTheme);
+      toggle.checked = savedTheme === "dark";
+
+      toggle.addEventListener("change", (e) => {
+        applyTheme(e.target.checked ? "dark" : "light");
       });
     });
   </script>
 </head>
 <body>
+  <!-- Top Right Theme Toggle -->
+  <div class="top-switch">
+    <span id="theme-icon">🌞</span>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
   <div class="container">
     <header class="header-centered">
       <div class="header-block">
@@ -28,10 +44,6 @@
         <div class="text-content">
           <h1>Tirthajit Baruah</h1>
           <p>PhD Student, Dept. of Cyber-Physical Systems<br>Indian Institute of Science, Bengaluru</p>
-          <label class="switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider round"></span>
-          </label>
         </div>
       </div>
       <nav>
@@ -45,7 +57,6 @@
       </nav>
     </header>
 
-    <!-- Remaining sections unchanged -->
     <section id="about">
       <h2>About Me</h2>
       <p>My research lies in the application of machine learning in healthcare, specifically in information extraction from medical datasets with low inter-class variance. I've worked with various medical imaging modalities and am keen on exploring multimodal representation learning for patient phenotyping and monitoring disease progression.</p>
