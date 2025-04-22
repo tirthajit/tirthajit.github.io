@@ -22,6 +22,100 @@
 </head>
 <body>
   <div class="container">
+    <header class="header-centered">
+      <div class="header-block">
+        <img src="TirthajitBaruah.jpg" alt="Tirthajit Baruah" class="profile-inline">
+        <div class="text-content">
+          <h1>Tirthajit Baruah</h1>
+          <p>PhD Student, Dept. of Cyber-Physical Systems<br>Indian Institute of Science, Bengaluru</p>
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a> | 
+        <a href="#research">Research</a> | 
+        <a href="#publications">Publications</a> | 
+        <a href="Tirthajit_Baruah_CV.pdf" target="_blank">CV</a> | 
+        <a href="#blog">Blog</a> | 
+        <a href="#gallery">Gallery</a> | 
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Remaining sections unchanged -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>My research lies in the application of machine learning in healthcare, specifically in information extraction from medical datasets with low inter-class variance. I've worked with various medical imaging modalities and am keen on exploring multimodal representation learning for patient phenotyping and monitoring disease progression.</p>
+      <p><strong>Conference:</strong> Attending ICLR 2025 in Singapore.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Multimodal representation learning of patient data</li>
+        <li>Self-supervised learning for healthcare data</li>
+        <li>Information extraction from medical data with low inter-class variance</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ol>
+        <li><a href="https://openreview.net/pdf?id=0jdELlT2VI">DIME – ICLR 2025</a></li>
+        <li><a href="https://doi.org/10.48550/arXiv.2310.16194">Low-Rank Latent Spaces – WACV 2024</a></li>
+        <li><a href="https://doi.org/10.48550/arXiv.2306.00011">DeepVAT – ICCV 2023</a></li>
+        <li><a href="https://www.ijrasb.com/index.php/ijrasb/article/view/33">Review on Cataract – IJRASB</a></li>
+      </ol>
+    </section>
+
+    <section id="blog">
+      <h2>Blog</h2>
+      <p>Coming soon! Stay tuned for posts on ML in healthcare, self-supervised learning, and more.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>Photos from conferences, labs, and fieldwork will appear here soon.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:tirthajitb@iisc.ac.in">tirthajitb@iisc.ac.in</a></p>
+      <p><a href="https://github.com/tirthajit">GitHub</a> | 
+         <a href="https://scholar.google.com/citations?user=gDr0VrYAAAAJ&hl=en">Google Scholar</a> | 
+         <a href="https://www.linkedin.com/in/tirthajit-baruah/">LinkedIn</a></p>
+    </section>
+  </div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tirthajit Baruah</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon_TJ.ico" type="image/x-icon">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.getElementById("theme-toggle").checked = savedTheme === "dark";
+
+      document.getElementById("theme-toggle").addEventListener("change", (e) => {
+        const newTheme = e.target.checked ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
     <header class="header-flex">
       <img src="TirthajitBaruah1.jpg" alt="Tirthajit Baruah" class="profile-inline">
       <div>
@@ -88,3 +182,4 @@
   </div>
 </body>
 </html>
+ -->
