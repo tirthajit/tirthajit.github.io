@@ -1,3 +1,4 @@
+````markdown
 # Tirthajit Baruah — Academic Website
 
 This repository contains the source code for my academic website:
@@ -7,6 +8,8 @@ This repository contains the source code for my academic website:
 I am a PhD student in the Department of Cyber-Physical Systems at the Indian Institute of Science, Bengaluru. My research focuses on reliable and data-efficient AI for healthcare, with interests in medical imaging, self-supervised learning, representation learning, calibrated risk estimation, and deployment-aware evaluation.
 
 ## Repository structure
+
+```text
 .
 ├── index.html              # Main website page
 ├── style.css               # Styling for the website
@@ -14,7 +17,7 @@ I am a PhD student in the Department of Cyber-Physical Systems at the Indian Ins
 ├── TirthajitBaruah.jpg     # Profile photo
 ├── favicon_TJ.ico          # Website favicon
 └── README.md               # Repository description
-
+````
 
 ## Website sections
 
@@ -29,7 +32,7 @@ The website currently includes:
 * News
 * Contact
 
-Planned sections include blog posts, a gallery, and selected non-research activities.
+Planned sections include collaborations and mentoring, blog posts, gallery, and selected non-research activities.
 
 ## Maintenance notes
 
