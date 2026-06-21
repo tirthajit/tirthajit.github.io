@@ -1,42 +1,51 @@
-# Tirthajit Baruah – Academic Personal Website
+# Tirthajit Baruah — Academic Website
 
-Welcome to the official academic website of **Tirthajit Baruah**, a PhD student at the Indian Institute of Science (IISc), Bengaluru. This site serves as a central hub for my research interests, publications, projects, and professional updates.
+This repository contains the source code for my academic website:
 
-🌐 View the website: [https://tirthajit.github.io](https://tirthajit.github.io)
+**Website:** https://tirthajit.github.io
 
----
+I am a PhD student in the Department of Cyber-Physical Systems at the Indian Institute of Science, Bengaluru. My research focuses on reliable and data-efficient AI for healthcare, with interests in medical imaging, self-supervised learning, representation learning, calibrated risk estimation, and deployment-aware evaluation.
 
-## 📌 Sections
+## Repository structure
+.
+├── index.html              # Main website page
+├── style.css               # Styling for the website
+├── Tirthajit_Baruah_CV.pdf # Current CV
+├── TirthajitBaruah.jpg     # Profile photo
+├── favicon_TJ.ico          # Website favicon
+└── README.md               # Repository description
 
-- **About Me** – A brief introduction to my research and academic background.
-- **Research** – Current research themes and interests.
-- **Publications** – My latest papers and conference contributions.
-- **CV** – Downloadable version of my academic CV.
-- **Contact** – Email and professional profiles (GitHub, Google Scholar, LinkedIn).
 
----
+## Website sections
 
-## 🚀 Technologies Used
+The website currently includes:
 
-- HTML5
-- CSS3 (custom, no frameworks)
-- Hosted via **GitHub Pages**
+* About
+* Research themes
+* Publications
+* Selected projects
+* Teaching
+* Service
+* News
+* Contact
 
----
+Planned sections include blog posts, a gallery, and selected non-research activities.
 
-## 📥 Deployment Instructions
+## Maintenance notes
 
-To update the site:
-1. Clone or fork this repo
-2. Edit `index.html` or `style.css` as needed
-3. Push changes to the `main` branch
-4. GitHub Pages will automatically update the live site
+* Update the CV PDF whenever the CV changes.
+* Keep publication links current.
+* Add code, project pages, posters, and slides when available.
+* Avoid keeping empty sections visible on the live website.
+* Review affiliations, collaborators, and mentoring entries periodically.
 
----
+## Links
 
-## 📫 Contact
+* GitHub: https://github.com/tirthajit
+* Google Scholar: https://scholar.google.com/citations?user=gDr0VrYAAAAJ
+* ORCID: https://orcid.org/0009-0009-2020-0521
+* OpenReview: https://openreview.net/profile?id=~Tirthajit_Baruah1
+* LinkedIn: https://www.linkedin.com/in/tirthajit-baruah/
 
-- Email: tirthajitb@iisc.ac.in  
-- [Google Scholar](https://scholar.google.com/citations?user=gDr0VrYAAAAJ&hl=en)  
-- [GitHub](https://github.com/tirthajit)  
-- [LinkedIn](https://www.linkedin.com/in/tirthajit-baruah/)
+```
+```
