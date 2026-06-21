@@ -230,6 +230,13 @@ h4 {
   font-size: 0.95rem;
 }
 
+.section-note {
+  color: var(--muted-color);
+  font-size: 0.95rem;
+  margin-top: -8px;
+  margin-bottom: 18px;
+}
+
 /* Cards and grids */
 
 .research-grid,
@@ -308,7 +315,7 @@ h4 {
 }
 
 /* Responsive layout */
-
+/* 
 @media (max-width: 760px) {
   .container {
     padding: 24px 18px 56px;
@@ -333,6 +340,19 @@ h4 {
 
   .site-nav {
     gap: 8px 13px;
+  }
+} */
+
+@media (max-width: 760px) {
+  .site-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+
+  .site-nav a {
+    white-space: nowrap;
   }
 }
 
