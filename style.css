@@ -300,6 +300,11 @@ h4 {
   padding-left: 1.2rem;
 }
 
+/* Service section spacing */
+#service .service-item + .service-item {
+  margin-top: 16px;
+}
+
 /* Contact and footer */
 
 .contact-links {
@@ -314,6 +319,7 @@ h4 {
   font-size: 0.9rem;
 }
 
+
 /* Responsive layout */
 
 @media (max-width: 760px) {
@@ -322,14 +328,46 @@ h4 {
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-areas: "photo text";
+    gap: 16px;
+    align-items: center;
     padding-top: 44px;
   }
 
   .hero-photo {
-    width: 145px;
-    height: 145px;
+    grid-area: photo;
+    width: 96px;
+    height: 96px;
+    border-width: 4px;
+  }
+
+  .hero-text {
+    grid-area: text;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+  }
+
+  .tagline {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .hero-links {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .hero-links a {
+    padding: 7px 12px;
+    font-size: 0.9rem;
   }
 
   .research-grid,
@@ -345,6 +383,7 @@ h4 {
     padding-bottom: 8px;
     scrollbar-width: thin;
   }
+
   .site-nav a {
     white-space: nowrap;
   }
@@ -356,8 +395,27 @@ h4 {
     right: 10px;
   }
 
+  .hero {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .hero-photo {
+    width: 78px;
+    height: 78px;
+    border-width: 3px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 10vw, 2.35rem);
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
   .hero-links a {
-    width: 100%;
-    justify-content: center;
+    padding: 7px 10px;
+    font-size: 0.88rem;
   }
 }
