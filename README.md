@@ -1,4 +1,3 @@
-````markdown
 # Tirthajit Baruah — Academic Website
 
 This repository contains the source code for my academic website:
@@ -49,6 +48,3 @@ Planned sections include collaborations and mentoring, blog posts, gallery, and 
 * ORCID: https://orcid.org/0009-0009-2020-0521
 * OpenReview: https://openreview.net/profile?id=~Tirthajit_Baruah1
 * LinkedIn: https://www.linkedin.com/in/tirthajit-baruah/
-
-```
-```
