@@ -2,20 +2,28 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Tirthajit Baruah</title>
+
   <meta name="description" content="Tirthajit Baruah is a PhD researcher at IISc Bengaluru working on reliable and data-efficient AI for medical imaging, self-supervised learning, representation learning, and healthcare AI." />
   <meta name="author" content="Tirthajit Baruah" />
   <meta name="keywords" content="Tirthajit Baruah, IISc, medical imaging, healthcare AI, self-supervised learning, representation learning, calibrated risk, radiology AI" />
-  
+
   <meta property="og:title" content="Tirthajit Baruah" />
   <meta property="og:description" content="PhD researcher at IISc Bengaluru working on reliable and data-efficient AI for medical imaging and healthcare." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tirthajit.github.io/" />
   <meta property="og:image" content="https://tirthajit.github.io/TirthajitBaruah.jpg" />
-  
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tirthajit Baruah" />
+  <meta name="twitter:description" content="PhD researcher at IISc Bengaluru working on reliable and data-efficient AI for medical imaging and healthcare." />
+  <meta name="twitter:image" content="https://tirthajit.github.io/TirthajitBaruah.jpg" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon_TJ.ico" type="image/x-icon">
+  <link rel="icon" href="favicon_TJ.ico" type="image/x-icon" />
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const savedTheme = localStorage.getItem("theme") || "light";
@@ -29,305 +37,476 @@
       };
 
       applyTheme(savedTheme);
-      toggle.checked = savedTheme === "dark";
 
-      toggle.addEventListener("change", (e) => {
-        applyTheme(e.target.checked ? "dark" : "light");
-      });
+      if (toggle) {
+        toggle.checked = savedTheme === "dark";
+        toggle.addEventListener("change", (e) => {
+          applyTheme(e.target.checked ? "dark" : "light");
+        });
+      }
     });
   </script>
 </head>
+
 <body>
-  <!-- Top Right Toggle -->
-  <div class="top-switch">
+  <div class="top-switch" aria-label="Theme toggle">
     <label class="switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider round"><span id="theme-icon">🌞</span></span>
+      <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode" />
+      <span class="slider round">
+        <span id="theme-icon">🌞</span>
+      </span>
     </label>
   </div>
 
   <div class="container">
-    <header class="header-centered">
-      <div class="header-block">
-        <img src="TirthajitBaruah.jpg" alt="Tirthajit Baruah" class="profile-inline">
-        <div class="text-content">
+    <header class="site-header">
+      <section class="hero" aria-label="Profile summary">
+        <div class="hero-text">
+          <p class="eyebrow">PhD Researcher · IISc Bengaluru</p>
           <h1>Tirthajit Baruah</h1>
-          <p>PhD Student, Dept. of Cyber-Physical Systems<br>Indian Institute of Science, Bengaluru</p>
+          <p class="tagline">
+            Reliable and data-efficient AI for medical imaging, representation learning,
+            and healthcare workflows.
+          </p>
+
+          <div class="hero-links">
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="Tirthajit_Baruah_CV.pdf" target="_blank" rel="noopener">CV</a>
+            <a href="mailto:tirthajitb@iisc.ac.in">Email</a>
+          </div>
         </div>
-      </div>
-  <nav>
-    <a href="#about">About</a> |
-    <a href="#research">Research</a> |
-    <a href="#publications">Publications</a> |
-    <a href="#projects">Projects</a> |
-    <a href="#people">People</a> |
-    <a href="#teaching">Teaching</a> |
-    <a href="#service">Service</a> |
-    <a href="#news">News</a> |
-    <a href="Tirthajit_Baruah_CV.pdf" target="_blank">CV</a> |
-    <a href="#contact">Contact</a> |
-    <a href="#beyond-research">Beyond Research</a>
-  </nav>
-  
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am a PhD student in the Department of Cyber-Physical Systems at the Indian Institute of Science, Bengaluru, advised by Dr. Punit Rathore. My research focuses on reliable and data-efficient AI for healthcare, with a particular interest in medical imaging, self-supervised learning, representation learning, calibrated risk estimation, and deployment-aware evaluation.
-    </p>
-    <p>
-      I am interested in learning from challenging clinical data settings where labels are limited, expensive, noisy, or unavailable. My recent work spans self-supervised learning for 3D medical imaging, deterministic autoencoders for structured latent representations, cluster assessment for image datasets, and AI-assisted radiology worklist triage using calibrated risk and queueing simulation.
-    </p>
-    <p>
-      Before joining IISc, I completed a BS-MS in Electrical Engineering and Computer Science with a minor in Data Science and Engineering at IISER Bhopal.
-    </p>
-  </section>
-  
-  <section id="research">
-    <h2>Research Themes</h2>
-  
-    <div class="research-grid">
-      <div class="card">
-        <h3>Data-efficient medical imaging AI</h3>
-        <p>Learning useful representations from limited, noisy, or unlabeled clinical imaging data.</p>
-      </div>
-  
-      <div class="card">
-        <h3>Self-supervised and representation learning</h3>
-        <p>Designing learning objectives, perturbations, and latent structures for robust medical image understanding.</p>
-      </div>
-  
-      <div class="card">
-        <h3>Reliable healthcare AI</h3>
-        <p>Studying calibration, uncertainty, risk estimation, and evaluation methods for AI systems used in healthcare settings.</p>
-      </div>
-  
-      <div class="card">
-        <h3>Clinical workflow simulation</h3>
-        <p>Translating model scores into workflow-level impact through calibrated risk estimates and queueing simulation.</p>
-      </div>
-    </div>
-  </section>
-  
-  <section id="publications">
-    <h2>Publications</h2>
-  
-    <ol class="pub-list">
-      <li>
-        <strong>Two-Fold Patch Perturbation for Efficient Self-Supervised Learning in 3D Medical Imaging.</strong><br>
-        <span class="authors"><strong>T. Baruah</strong>, K. Jamadar, P. Rathore.</span><br>
-        <em>International Joint Conference on Artificial Intelligence and European Conference on Artificial Intelligence (IJCAI-ECAI), 2026.</em><br>
-        <a href="https://2026.ijcai.org/accepted-papers/">Paper</a> |
-        <!-- <a href="#">Project Page</a> | -->
-        <a href="https://github.com/kabir2505/Two-Fold">Code</a>        
-      </li>
-  
-      <li>
-        <strong>Translating Classifier Scores into Clinical Impact: Calibrated Risk and Queueing Simulation for AI-Assisted Radiology Worklist Triage.</strong><br>
-        <span class="authors"><strong>T. Baruah</strong>, P. Rathore.</span><br>
-        <em>DAI & AIMedHealth @ AAAI, 2026.</em><br>
-        <a href="https://proceedings.mlr.press/v317/baruah26a.html">Paper</a> |
-        <!-- <a href="#">Project Page</a> |   -->
-        <a href="https://github.com/tirthajit/rsna-triage">Code</a>
-      </li>
-  
-      <li>
-        <strong>DIME: Deterministic Information Maximizing Autoencoder.</strong><br>
-        <span class="authors">A. Mazumder, C. Garg, <strong>T. Baruah</strong>, P. Rathore.</span><br>
-        <em>DeLTa @ ICLR, 2025.</em><br>
-        <a href="https://openreview.net/pdf?id=0jdELlT2VI">Paper</a>
-      </li>
-  
-      <li>
-        <strong>Learning Low-Rank Latent Spaces with Simple Deterministic Autoencoder: Theoretical and Empirical Insights.</strong><br>
-        <span class="authors">A. Mazumder, <strong>T. Baruah</strong>, B. Kumar, R. Sharma, V. Pattanaik, P. Rathore.</span><br>
-        <em>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2024.</em><br>
-        <a href="https://doi.org/10.48550/arXiv.2310.16194">Paper</a> |
-        <a href="https://tirthajit.github.io/latent-low-rank-AE/">Project Page</a> |
-        <a href="https://github.com/tirthajit/LoRAE_WACV24">Code</a>
-      </li>
-  
-      <li>
-        <strong>DeepVAT: A Self-Supervised Technique for Cluster Assessment for Image Datasets.</strong><br>
-        <span class="authors">A. Mazumder, <strong>T. Baruah</strong>, A. Singh, P. Krishna, V. Pattanaik, P. Rathore.</span><br>
-        <em>ViPrior @ ICCV, 2023.</em><br>
-        <a href="https://doi.org/10.48550/arXiv.2306.00011">Paper</a>
-      </li>
-  
-      <li>
-        <strong>A Comprehensive Review of Molecular Biology and Genetics of Cataract.</strong><br>
-        <span class="authors">H. Wasnik, R. Gandhi, N. Patil, R. Behera, A. Golait, T. Patel, <strong>T. Baruah</strong>.</span><br>
-        <em>International Journal for Research in Applied Sciences and Biotechnology.</em><br>
-        <a href="https://www.ijrasb.com/index.php/ijrasb/article/view/33">Paper</a>
-      </li>
-    </ol>
-  </section>
-  
-  <section id="projects">
-    <h2>Selected Projects</h2>
-  
-    <div class="project">
-      <h3>Efficient Self-Supervised Learning for 3D Medical Imaging</h3>
-      <p>
-        Developing patch-perturbation based self-supervised learning methods for 3D medical imaging, with emphasis on label-efficient representation learning.
-      </p>
-      <p><strong>Keywords:</strong> medical imaging, 3D SSL, representation learning, limited labels.</p>
-      <p>
-        <a href="https://github.com/kabir2505/Two-Fold">Code</a>
-      </p>
-    </div>
-  
-    <div class="project">
-      <h3>Radiology Worklist Triage Simulation</h3>
-      <p>
-        Translating classifier scores into calibrated risk estimates and simulating their downstream effect on radiology worklist prioritization.
-      </p>
-      <p><strong>Keywords:</strong> calibration, queueing simulation, radiology AI, clinical workflow.</p>
-      <p>
-        <a href="https://github.com/tirthajit/rsna-triage">Code</a>
-      </p>
-    </div>
-  
-    <div class="project">
-      <h3>Low-Rank Latent Spaces with Deterministic Autoencoders</h3>
-      <p>
-        Studying deterministic autoencoder architectures that induce structured low-rank latent spaces for classification, clustering, and generative tasks.
-      </p>
-      <p>
-        <a href="https://tirthajit.github.io/latent-low-rank-AE/">Project Page</a> |
-        <a href="https://github.com/tirthajit/LoRAE_WACV24">Code</a>
-      </p>
-    </div>
-  
-    <div class="project">
-      <h3>Representation Learning for Electronic Health Records</h3>
-      <p>
-        Exploring augmentation strategies and self-supervised time-series representation learning for large-scale EHR datasets.
-      </p>
-      <p><strong>Datasets:</strong> MIMIC-III, PhysioNet 2012.</p>
-    </div>
-  </section>
 
-  <section id="people">
-    <h2>People</h2>
-  
-    <h3>Collaborators</h3>
-    <div class="person-card">
-      <h4>Sagar Kumar</h4>
-      <p class="meta">Research Associate IISc, Bengaluru · May 2026 – Ongoing</p>
-      <p><strong>Work:</strong> 3D SSL for Medical Imaging.</p>
-      <p>
-        <!-- <a href="#">Website</a> | -->
-        <a href="https://scholar.google.com/citations?user=p3Ki1hgAAAAJ">Google Scholar</a> |
-        <a href="https://github.com/sagarkr1729">GitHub</a> |
-        <!-- <a href="#">Project</a> -->
-      </p>
-    </div>
-  
-    <h3>Mentored Students / Interns</h3>
-    <div class="person-card">
-      <h4>Name Surname</h4>
-      <p class="meta">Research Intern at Precog, IIITH · Research Intern · Aug 2025 – Dec 2025</p>
-      <p><strong>Project:</strong>Novel Purturbation Strategy for 3D Medical SSL.</p>
-      <p><strong>Outcome:</strong> IJCAI-ECAI (Core A*), 2026 main conference publication.</p>
-      <p> <strong>Links:</strong>
-        <a href="https://github.com/kabir2505/Two-Fold">Project Codebase</a> |
-        <a href="https://www.linkedin.com/in/kabir-jamadar-31b679249/">Homepage</a> |
-        <!-- <a href="#">Google Scholar</a> | -->
-        <a href="https://github.com/kabir2505">GitHub</a>.</p>
-    </div>
-    
-    <div class="person-card">
-      <h4>Name Surname</h4>
-      <p class="meta">Master’s at the Halıcıoğlu Data Science Institute, UCSD · Research Intern · Month Year – Month Year</p>
-      <p><strong>Project:</strong> 
-          <a>Medical Multi-Modal Fusion & Cross Modal Alignment</a> |
-          <a>Test-time Adaptation for Optical Flow</a></p>
-      <p><strong>Outcome:</strong> Summer Internship Report.</p>
-      <p> <strong>Links:</strong>
-        <a href="https://drive.google.com/file/d/17V-IovP9YHo6Lb0jlTgjNYpH9m7nXoAm/view">Internship Report</a> |
-        <a href="https://github.com/FrozenWolf-Cyber/Multi-Modal-MIMIC">Project Codebase</a> |
-        <a href="https://gokuladethya.uk/">Homepage</a> |
-        <a href="https://scholar.google.com/citations?user=m8n5yo8AAAAJ">Google Scholar</a> |
-        <a href="https://github.com/FrozenWolf-Cyber">GitHub</a></p>
-    </div>
-  </section>
-      
-  <section id="teaching">
-    <h2>Teaching</h2>
-    <ul>
-      <li><strong>Teaching Assistant</strong>, Probabilistic Machine Learning: Theory and Applications, IISc Bengaluru, Jan–May 2025.</li>
-      <li><strong>Teaching Assistant</strong>, Machine Learning, IISER Bhopal, Aug–Dec 2022.</li>
-      <li><strong>Teaching Assistant</strong>, Introduction to Programming, IISER Bhopal, Apr–May 2022.</li>
-    </ul>
-  </section>
-      
-  <section id="service">
-    <h2>Service & Technical Leadership</h2>
-  
-    <div class="service-item">
-      <h3>Department GPU Cluster Administrator</h3>
-      <p class="meta">Department of Cyber-Physical Systems, IISc Bengaluru · Volunteer role · March 2026 – Present</p>
-      <ul>
-        <li>Administer and coordinate access to the department's GPU cluster for research users.</li>
-        <li>Support user onboarding, environment setup, resource usage practices, and troubleshooting.</li>
-        <li>Help maintain shared compute infrastructure used for machine learning and AI research.</li>
-      </ul>
-    </div>
-  
-    <div class="service-item">
-      <h3>Peer Review</h3>
-      <ul>
-        <li>Reviewer, [Conference / Workshop Name], [Year].</li>
-      </ul>
-    </div>
-  </section>
-  
-  <section id="news">
-    <h2>News</h2>
-    <ul>
-      <li><strong>Aug 2026</strong> – Upcoming presentation at IJCAI-ECAI 2026, Bremen, Germany.</li>
-      <li><strong>Jan 2026</strong> – Presented work on calibrated risk and queueing simulation for AI-assisted radiology worklist triage at DAI & AIMedHealth @ AAAI 2026, Singapore.</li>
-      <li><strong>Apr 2025</strong> – Presented DIME at DeLTa @ ICLR 2025, Singapore</li>
-      <!-- <li><strong>2024</strong> – Presented work on low-rank latent spaces with deterministic autoencoders at WACV 2024.</li> -->
-    </ul>
-  </section>
-  
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:tirthajitb@iisc.ac.in">tirthajitb@iisc.ac.in</a></p>
-    <p>
-      <a href="https://github.com/tirthajit">GitHub</a> |
-      <a href="https://scholar.google.com/citations?user=gDr0VrYAAAAJ&hl=en">Google Scholar</a> |
-      <a href="https://orcid.org/0009-0009-2020-0521">ORCID</a> |
-      <a href="https://openreview.net/profile?id=~Tirthajit_Baruah1">OpenReview</a> |
-      <a href="https://www.linkedin.com/in/tirthajit-baruah/">LinkedIn</a>
-    </p>
-  </section>
-<!--
-Future sections to add when ready:
+        <img
+          src="TirthajitBaruah.jpg"
+          alt="Tirthajit Baruah"
+          class="hero-photo"
+        />
+      </section>
 
-1. Blog
-Use for 2–4 polished technical or reflective posts.
-Possible topics:
-- Notes on self-supervised learning for medical imaging
-- Calibration and clinical risk estimation
-- Lessons from building reproducible medical AI pipelines
-- Conference notes from IJCAI / ICLR / AAAI / WACV
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#people">People</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+        <a href="#news">News</a>
+        <a href="#beyond-research">Beyond Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-2. Gallery
-Use only when you have good-quality conference/lab/project photos.
-Avoid overloading the academic homepage.
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am a PhD student in the Department of Cyber-Physical Systems at the
+          Indian Institute of Science, Bengaluru, advised by Dr. Punit Rathore.
+          My research focuses on reliable and data-efficient AI for healthcare,
+          with a particular interest in medical imaging, self-supervised learning,
+          representation learning, calibrated risk estimation, and deployment-aware
+          evaluation.
+        </p>
+        <p>
+          I am interested in learning from challenging clinical data settings where
+          labels are limited, expensive, noisy, or unavailable. My recent work spans
+          self-supervised learning for 3D medical imaging, deterministic autoencoders
+          for structured latent representations, cluster assessment for image datasets,
+          and AI-assisted radiology worklist triage using calibrated risk and queueing
+          simulation.
+        </p>
+        <p>
+          Before joining IISc, I completed a BS-MS in Electrical Engineering and
+          Computer Science with a minor in Data Science and Engineering at IISER Bhopal.
+        </p>
+      </section>
 
-3. Beyond Research
-Use for a compact personal section: sports, tabla, karate, etc.
-Keep it near the bottom, after News or before Contact.
--->
-  <section id="beyond-research">
-  <h2>Beyond Research</h2>
-  <p>
-    Outside of research, I have been involved in athletics, martial arts, football, swimming, and music. I served as Coordinator of the Karate Club at IISER Bhopal, won a gold medal in the 4×100m relay at the Inter-IISER Sports Meet, and trained in tabla for five years (Visharad).
-  </p>
-</section>       
+      <section id="research">
+        <h2>Research Themes</h2>
+
+        <div class="research-grid">
+          <article class="card">
+            <h3>Data-efficient medical imaging AI</h3>
+            <p>
+              Learning useful representations from limited, noisy, or unlabeled
+              clinical imaging data.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Self-supervised and representation learning</h3>
+            <p>
+              Designing learning objectives, perturbations, and latent structures
+              for robust medical image understanding.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Reliable healthcare AI</h3>
+            <p>
+              Studying calibration, uncertainty, risk estimation, and evaluation
+              methods for AI systems used in healthcare settings.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Clinical workflow simulation</h3>
+            <p>
+              Translating model scores into workflow-level impact through calibrated
+              risk estimates and queueing simulation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+
+        <ol class="pub-list">
+          <li class="pub-item">
+            <strong>
+              Two-Fold Patch Perturbation for Efficient Self-Supervised Learning
+              in 3D Medical Imaging.
+            </strong>
+            <br />
+            <span class="authors"><strong>T. Baruah</strong>, K. Jamadar, P. Rathore.</span>
+            <br />
+            <em>
+              International Joint Conference on Artificial Intelligence and European
+              Conference on Artificial Intelligence (IJCAI-ECAI), 2026.
+            </em>
+            <br />
+            <a href="https://2026.ijcai.org/accepted-papers/" target="_blank" rel="noopener">Paper</a>
+            |
+            <a href="https://github.com/kabir2505/Two-Fold" target="_blank" rel="noopener">Code</a>
+          </li>
+
+          <li class="pub-item">
+            <strong>
+              Translating Classifier Scores into Clinical Impact: Calibrated Risk
+              and Queueing Simulation for AI-Assisted Radiology Worklist Triage.
+            </strong>
+            <br />
+            <span class="authors"><strong>T. Baruah</strong>, P. Rathore.</span>
+            <br />
+            <em>DAI &amp; AIMedHealth @ AAAI, 2026.</em>
+            <br />
+            <a href="https://proceedings.mlr.press/v317/baruah26a.html" target="_blank" rel="noopener">Paper</a>
+            |
+            <a href="https://github.com/tirthajit/rsna-triage" target="_blank" rel="noopener">Code</a>
+          </li>
+
+          <li class="pub-item">
+            <strong>DIME: Deterministic Information Maximizing Autoencoder.</strong>
+            <br />
+            <span class="authors">
+              A. Mazumder, C. Garg, <strong>T. Baruah</strong>, P. Rathore.
+            </span>
+            <br />
+            <em>DeLTa @ ICLR, 2025.</em>
+            <br />
+            <a href="https://openreview.net/pdf?id=0jdELlT2VI" target="_blank" rel="noopener">Paper</a>
+          </li>
+
+          <li class="pub-item">
+            <strong>
+              Learning Low-Rank Latent Spaces with Simple Deterministic Autoencoder:
+              Theoretical and Empirical Insights.
+            </strong>
+            <br />
+            <span class="authors">
+              A. Mazumder, <strong>T. Baruah</strong>, B. Kumar, R. Sharma,
+              V. Pattanaik, P. Rathore.
+            </span>
+            <br />
+            <em>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2024.</em>
+            <br />
+            <a href="https://doi.org/10.48550/arXiv.2310.16194" target="_blank" rel="noopener">Paper</a>
+            |
+            <a href="https://tirthajit.github.io/latent-low-rank-AE/" target="_blank" rel="noopener">Project Page</a>
+            |
+            <a href="https://github.com/tirthajit/LoRAE_WACV24" target="_blank" rel="noopener">Code</a>
+          </li>
+
+          <li class="pub-item">
+            <strong>
+              DeepVAT: A Self-Supervised Technique for Cluster Assessment for Image Datasets.
+            </strong>
+            <br />
+            <span class="authors">
+              A. Mazumder, <strong>T. Baruah</strong>, A. Singh, P. Krishna,
+              V. Pattanaik, P. Rathore.
+            </span>
+            <br />
+            <em>ViPrior @ ICCV, 2023.</em>
+            <br />
+            <a href="https://doi.org/10.48550/arXiv.2306.00011" target="_blank" rel="noopener">Paper</a>
+          </li>
+
+          <li class="pub-item">
+            <strong>A Comprehensive Review of Molecular Biology and Genetics of Cataract.</strong>
+            <br />
+            <span class="authors">
+              H. Wasnik, R. Gandhi, N. Patil, R. Behera, A. Golait,
+              T. Patel, <strong>T. Baruah</strong>.
+            </span>
+            <br />
+            <em>International Journal for Research in Applied Sciences and Biotechnology.</em>
+            <br />
+            <a href="https://www.ijrasb.com/index.php/ijrasb/article/view/33" target="_blank" rel="noopener">Paper</a>
+          </li>
+        </ol>
+      </section>
+
+      <section id="projects">
+        <h2>Selected Projects</h2>
+
+        <div class="card-grid">
+          <article class="project">
+            <h3>Efficient Self-Supervised Learning for 3D Medical Imaging</h3>
+            <p>
+              Developing patch-perturbation based self-supervised learning methods
+              for 3D medical imaging, with emphasis on label-efficient representation
+              learning.
+            </p>
+            <p class="keywords">
+              <strong>Keywords:</strong> medical imaging, 3D SSL, representation learning,
+              limited labels.
+            </p>
+            <p>
+              <a href="https://github.com/kabir2505/Two-Fold" target="_blank" rel="noopener">Code</a>
+            </p>
+          </article>
+
+          <article class="project">
+            <h3>Radiology Worklist Triage Simulation</h3>
+            <p>
+              Translating classifier scores into calibrated risk estimates and
+              simulating their downstream effect on radiology worklist prioritization.
+            </p>
+            <p class="keywords">
+              <strong>Keywords:</strong> calibration, queueing simulation, radiology AI,
+              clinical workflow.
+            </p>
+            <p>
+              <a href="https://github.com/tirthajit/rsna-triage" target="_blank" rel="noopener">Code</a>
+            </p>
+          </article>
+
+          <article class="project">
+            <h3>Low-Rank Latent Spaces with Deterministic Autoencoders</h3>
+            <p>
+              Studying deterministic autoencoder architectures that induce structured
+              low-rank latent spaces for classification, clustering, and generative tasks.
+            </p>
+            <p>
+              <a href="https://tirthajit.github.io/latent-low-rank-AE/" target="_blank" rel="noopener">Project Page</a>
+              |
+              <a href="https://github.com/tirthajit/LoRAE_WACV24" target="_blank" rel="noopener">Code</a>
+            </p>
+          </article>
+
+          <article class="project">
+            <h3>Representation Learning for Electronic Health Records</h3>
+            <p>
+              Exploring augmentation strategies and self-supervised time-series
+              representation learning for large-scale EHR datasets.
+            </p>
+            <p class="keywords">
+              <strong>Datasets:</strong> MIMIC-III, PhysioNet 2012.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="people">
+        <h2>People</h2>
+
+        <h3>Collaborators</h3>
+        <div class="people-grid">
+          <article class="person-card">
+            <h4>Sagar Kumar</h4>
+            <p class="meta">Research Associate, IISc Bengaluru · May 2026 – Present</p>
+            <p><strong>Work:</strong> 3D self-supervised learning for medical imaging.</p>
+            <p>
+              <a href="https://scholar.google.com/citations?user=p3Ki1hgAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+              |
+              <a href="https://github.com/sagarkr1729" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+        </div>
+
+        <h3>Mentored Students / Interns</h3>
+        <div class="people-grid">
+          <article class="person-card">
+            <h4>Name Surname</h4>
+            <p class="meta">Research Intern, Precog, IIIT Hyderabad · Aug 2025 – Dec 2025</p>
+            <p>
+              <strong>Project:</strong> Novel perturbation strategy for 3D medical
+              self-supervised learning.
+            </p>
+            <p>
+              <strong>Outcome:</strong> IJCAI-ECAI 2026 main conference publication.
+            </p>
+            <p>
+              <a href="https://github.com/kabir2505/Two-Fold" target="_blank" rel="noopener">Project Codebase</a>
+              |
+              <a href="https://www.linkedin.com/in/kabir-jamadar-31b679249/" target="_blank" rel="noopener">Homepage</a>
+              |
+              <a href="https://github.com/kabir2505" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+
+          <article class="person-card">
+            <h4>Gokul T. Adethya</h4>
+            <p class="meta">
+              Master’s student, Halıcıoğlu Data Science Institute, UC San Diego ·
+              Research Intern · Jun 2024 – Jan 2025
+            </p>
+            <p>
+              <strong>Projects:</strong> Medical multi-modal fusion and cross-modal alignment; test-time adaptation for optical flow.
+            </p>
+            <p><strong>Outcome:</strong> Summer internship report.</p>
+            <p>
+              <a href="https://drive.google.com/file/d/17V-IovP9YHo6Lb0jlTgjNYpH9m7nXoAm/view" target="_blank" rel="noopener">Internship Report</a>
+              |
+              <a href="https://github.com/FrozenWolf-Cyber/Multi-Modal-MIMIC" target="_blank" rel="noopener">Project Codebase</a>
+              |
+              <a href="https://gokuladethya.uk/" target="_blank" rel="noopener">Homepage</a>
+              |
+              <a href="https://scholar.google.com/citations?user=m8n5yo8AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+              |
+              <a href="https://github.com/FrozenWolf-Cyber" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <ul class="clean-list">
+          <li>
+            <strong>Teaching Assistant</strong>, Probabilistic Machine Learning:
+            Theory and Applications, IISc Bengaluru, Jan–May 2025.
+          </li>
+          <li>
+            <strong>Teaching Assistant</strong>, Machine Learning, IISER Bhopal,
+            Aug–Dec 2022.
+          </li>
+          <li>
+            <strong>Teaching Assistant</strong>, Introduction to Programming,
+            IISER Bhopal, Apr–May 2022.
+          </li>
+        </ul>
+      </section>
+
+      <section id="service">
+        <h2>Service & Technical Leadership</h2>
+
+        <article class="service-item">
+          <h3>Department GPU Cluster Administrator</h3>
+          <p class="meta">
+            Department of Cyber-Physical Systems, IISc Bengaluru · Volunteer role ·
+            Mar 2026 – Present
+          </p>
+          <ul>
+            <li>
+              Administer and coordinate access to the department's GPU cluster for
+              research users.
+            </li>
+            <li>
+              Support user onboarding, environment setup, resource usage practices,
+              and troubleshooting.
+            </li>
+            <li>
+              Help maintain shared compute infrastructure used for machine learning
+              and AI research.
+            </li>
+          </ul>
+        </article>
+
+        <!--
+        Add this block when you have confirmed venue/year details.
+
+        <article class="service-item">
+          <h3>Peer Review</h3>
+          <ul>
+            <li>Reviewer, Conference / Workshop Name, Year.</li>
+          </ul>
+        </article>
+        -->
+      </section>
+
+      <section id="news">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li>
+            <strong>Aug 2026</strong> — Upcoming presentation at IJCAI-ECAI 2026,
+            Bremen, Germany.
+          </li>
+          <li>
+            <strong>Jan 2026</strong> — Presented work on calibrated risk and
+            queueing simulation for AI-assisted radiology worklist triage at
+            DAI &amp; AIMedHealth @ AAAI 2026, Singapore.
+          </li>
+          <li>
+            <strong>Apr 2025</strong> — Presented DIME at DeLTa @ ICLR 2025,
+            Singapore.
+          </li>
+        </ul>
+      </section>
+
+      <!--
+      Future sections to add when ready:
+
+      1. Blog
+      Use for 2–4 polished technical or reflective posts.
+      Possible topics:
+      - Notes on self-supervised learning for medical imaging
+      - Calibration and clinical risk estimation
+      - Lessons from building reproducible medical AI pipelines
+      - Conference notes from IJCAI / ICLR / AAAI / WACV
+
+      2. Gallery
+      Use only when you have good-quality conference/lab/project photos.
+      Avoid overloading the academic homepage.
+      -->
+
+      <section id="beyond-research">
+        <h2>Beyond Research</h2>
+        <p>
+          Outside of research, I have been involved in athletics, martial arts, football,
+          swimming, and music. I served as Coordinator of the Karate Club at IISER
+          Bhopal, won a gold medal in the 4×100m relay at the Inter-IISER Sports Meet,
+          and trained in tabla for five years (Visharad).
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email:
+          <a href="mailto:tirthajitb@iisc.ac.in">tirthajitb@iisc.ac.in</a>
+        </p>
+        <p class="contact-links">
+          <a href="https://github.com/tirthajit" target="_blank" rel="noopener">GitHub</a>
+          |
+          <a href="https://scholar.google.com/citations?user=gDr0VrYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          |
+          <a href="https://orcid.org/0009-0009-2020-0521" target="_blank" rel="noopener">ORCID</a>
+          |
+          <a href="https://openreview.net/profile?id=~Tirthajit_Baruah1" target="_blank" rel="noopener">OpenReview</a>
+          |
+          <a href="https://www.linkedin.com/in/tirthajit-baruah/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© Tirthajit Baruah. Last updated: June 2026.</p>
+    </footer>
   </div>
 </body>
 </html>
