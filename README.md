@@ -1,9 +1,7 @@
 # Tirthajit Baruah — Academic Website
-
 This repository contains the source code for my academic website:
 
 **Website:** https://tirthajit.github.io
-
 I am a PhD student in the Department of Cyber-Physical Systems at the Indian Institute of Science, Bengaluru. My research focuses on reliable and data-efficient AI for healthcare, with interests in medical imaging, self-supervised learning, representation learning, calibrated risk estimation, and deployment-aware evaluation.
 
 ## Repository structure
