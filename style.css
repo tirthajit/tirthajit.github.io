@@ -143,6 +143,16 @@ h1 {
   font-size: 1.14rem;
 }
 
+.latest-line {
+  margin: 14px 0 0;
+  color: var(--muted-color);
+  font-size: 0.96rem;
+}
+
+.latest-line strong {
+  color: var(--link-color);
+}
+
 .hero-photo {
   width: 190px;
   height: 190px;
@@ -283,6 +293,20 @@ h4 {
   color: var(--muted-color);
 }
 
+/* People */
+
+.period {
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--link-color);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.affiliation {
+  margin-bottom: 10px;
+}
+
 /* Lists */
 
 .clean-list,
@@ -301,140 +325,10 @@ h4 {
 }
 
 /* Service section spacing */
+
 #service .service-item + .service-item {
   margin-top: 16px;
 }
-
-/* Contact and footer */
-
-.contact-links {
-  line-height: 1.9;
-}
-
-.site-footer {
-  margin-top: 58px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border-color);
-  color: var(--muted-color);
-  font-size: 0.9rem;
-}
-
-
-/* Responsive layout */
-
-@media (max-width: 760px) {
-  .container {
-    padding: 24px 18px 56px;
-  }
-
-  .hero {
-    grid-template-columns: 74px minmax(0, 1fr);
-    gap: 14px;
-    align-items: start;
-    padding-top: 44px;
-  }
-
-  .hero-photo {
-    width: 74px;
-    height: 74px;
-    border-width: 3px;
-    margin-top: 42px;
-  }
-
-  .eyebrow {
-    font-size: 0.72rem;
-    margin-bottom: 6px;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 9vw, 2.65rem);
-  }
-
-  .tagline {
-    margin-top: 10px;
-    font-size: 1rem;
-  }
-
-  .latest-line {
-    font-size: 0.92rem;
-  }
-
-  .hero-links {
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .hero-links a {
-    padding: 7px 12px;
-    font-size: 0.9rem;
-  }
-
-  .research-grid,
-  .card-grid,
-  .people-grid,
-  .gallery-grid,
-  .blog-list {
-    grid-template-columns: 1fr;
-  }
-
-  .site-nav {
-    gap: 8px 13px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-  }
-
-  .site-nav a {
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 420px) {
-  .top-switch {
-    top: 10px;
-    right: 10px;
-  }
-
-  .hero {
-    grid-template-columns: 66px minmax(0, 1fr);
-    gap: 12px;
-  }
-
-  .hero-photo {
-    width: 66px;
-    height: 66px;
-    margin-top: 40px;
-  }
-
-  h1 {
-    font-size: clamp(1.85rem, 10vw, 2.35rem);
-  }
-
-  .tagline {
-    font-size: 0.95rem;
-  }
-
-  .hero-links a {
-    padding: 7px 10px;
-    font-size: 0.88rem;
-  }
-}
-
-/* @media (max-width: 360px) {
-  .hero {
-    grid-template-columns: 68px minmax(0, 1fr);
-  }
-
-  .hero-photo {
-    width: 68px;
-    height: 68px;
-  }
-
-  h1 {
-    font-size: 1.7rem;
-  }
-} */
 
 /* Badges */
 
@@ -505,26 +399,130 @@ h4 {
   margin-bottom: 0;
 }
 
-/* Mobile gallery and blog */
+/* Contact and footer */
+
+.contact-links {
+  line-height: 1.9;
+}
+
+.site-footer {
+  margin-top: 58px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-color);
+  color: var(--muted-color);
+  font-size: 0.9rem;
+}
+
+/* Responsive layout */
 
 @media (max-width: 760px) {
+  .container {
+    padding: 24px 18px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    justify-items: center;
+    text-align: center;
+    padding-top: 44px;
+  }
+
+  .hero-photo {
+    grid-row: 1;
+    width: 108px;
+    height: 108px;
+    border-width: 4px;
+  }
+
+  .hero-text {
+    grid-row: 2;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.65rem);
+  }
+
+  .tagline {
+    margin: 10px auto 0;
+    font-size: 1rem;
+    max-width: 520px;
+  }
+
+  .latest-line {
+    font-size: 0.92rem;
+  }
+
+  .hero-links {
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .hero-links a {
+    padding: 7px 12px;
+    font-size: 0.9rem;
+  }
+
+  .research-grid,
+  .card-grid,
+  .people-grid,
   .gallery-grid,
   .blog-list {
     grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    gap: 8px 13px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+
+  .site-nav a {
+    white-space: nowrap;
   }
 
   .badge {
     margin-left: 4px;
     font-size: 0.72rem;
   }
+
+  .period {
+    display: block;
+    margin-left: 0;
+    margin-top: 2px;
+  }
 }
 
-.latest-line {
-  margin: 14px 0 0;
-  color: var(--muted-color);
-  font-size: 0.96rem;
-}
+@media (max-width: 420px) {
+  .top-switch {
+    top: 10px;
+    right: 10px;
+  }
 
-.latest-line strong {
-  color: var(--link-color);
+  .hero-photo {
+    width: 92px;
+    height: 92px;
+    border-width: 3px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 10vw, 2.35rem);
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .hero-links a {
+    padding: 7px 10px;
+    font-size: 0.88rem;
+  }
 }
