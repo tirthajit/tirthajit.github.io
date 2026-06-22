@@ -328,22 +328,17 @@ h4 {
   }
 
   .hero {
-    grid-template-columns: 96px minmax(0, 1fr);
-    grid-template-areas: "photo text";
-    gap: 16px;
-    align-items: center;
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
     padding-top: 44px;
   }
 
   .hero-photo {
-    grid-area: photo;
-    width: 96px;
-    height: 96px;
-    border-width: 4px;
-  }
-
-  .hero-text {
-    grid-area: text;
+    width: 74px;
+    height: 74px;
+    border-width: 3px;
+    margin-top: 42px;
   }
 
   .eyebrow {
@@ -352,12 +347,16 @@ h4 {
   }
 
   h1 {
-    font-size: clamp(2rem, 9vw, 2.7rem);
+    font-size: clamp(2rem, 9vw, 2.65rem);
   }
 
   .tagline {
     margin-top: 10px;
     font-size: 1rem;
+  }
+
+  .latest-line {
+    font-size: 0.92rem;
   }
 
   .hero-links {
@@ -372,7 +371,9 @@ h4 {
 
   .research-grid,
   .card-grid,
-  .people-grid {
+  .people-grid,
+  .gallery-grid,
+  .blog-list {
     grid-template-columns: 1fr;
   }
 
@@ -396,14 +397,14 @@ h4 {
   }
 
   .hero {
-    grid-template-columns: 78px minmax(0, 1fr);
-    gap: 13px;
+    grid-template-columns: 66px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .hero-photo {
-    width: 78px;
-    height: 78px;
-    border-width: 3px;
+    width: 66px;
+    height: 66px;
+    margin-top: 40px;
   }
 
   h1 {
@@ -420,7 +421,7 @@ h4 {
   }
 }
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .hero {
     grid-template-columns: 68px minmax(0, 1fr);
   }
@@ -433,7 +434,7 @@ h4 {
   h1 {
     font-size: 1.7rem;
   }
-}
+} */
 
 /* Badges */
 
@@ -516,4 +517,14 @@ h4 {
     margin-left: 4px;
     font-size: 0.72rem;
   }
+}
+
+.latest-line {
+  margin: 14px 0 0;
+  color: var(--muted-color);
+  font-size: 0.96rem;
+}
+
+.latest-line strong {
+  color: var(--link-color);
 }
