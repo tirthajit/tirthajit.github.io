@@ -205,6 +205,24 @@ h1 {
   text-decoration: none;
 }
 
+/* Sticky navigation */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 850;
+  background: color-mix(in srgb, var(--bg-color) 88%, transparent);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+}
+
+/* Prevent section headings from hiding behind sticky nav */
+section {
+  scroll-margin-top: 72px;
+}
+
+
 /* Sections */
 
 section {
