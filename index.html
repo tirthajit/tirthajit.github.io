@@ -24,79 +24,80 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon_TJ.ico" type="image/x-icon" />
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    const themeButton = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-    const themeText = document.getElementById("theme-text");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      const themeButton = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeText = document.getElementById("theme-text");
 
-    const menuButton = document.getElementById("menu-toggle");
-    const navPanel = document.getElementById("nav-panel");
-    const navLinks = document.querySelectorAll(".nav-links a");
+      const menuButton = document.getElementById("menu-toggle");
+      const navPanel = document.getElementById("nav-panel");
+      const navLinks = document.querySelectorAll(".nav-links a");
 
-    const applyTheme = (theme) => {
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
+      const applyTheme = (theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
 
-      if (themeIcon) {
-        themeIcon.textContent = theme === "dark" ? "🌙" : "☀️";
-      }
+        if (themeIcon) {
+          themeIcon.textContent = theme === "dark" ? "🌙" : "☀️";
+        }
 
-      if (themeText) {
-        themeText.textContent = theme === "dark" ? "Dark" : "Light";
-      }
+        if (themeText) {
+          themeText.textContent = theme === "dark" ? "Dark" : "Light";
+        }
+
+        if (themeButton) {
+          themeButton.setAttribute(
+            "aria-label",
+            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+          );
+        }
+      };
+
+      applyTheme(savedTheme);
 
       if (themeButton) {
-        themeButton.setAttribute(
-          "aria-label",
-          theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-        );
+        themeButton.addEventListener("click", () => {
+          const currentTheme = document.documentElement.getAttribute("data-theme");
+          applyTheme(currentTheme === "dark" ? "light" : "dark");
+        });
       }
-    };
 
-    applyTheme(savedTheme);
+      const closeMenu = () => {
+        if (!menuButton || !navPanel) return;
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+        navPanel.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+      };
 
-    if (themeButton) {
-      themeButton.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        applyTheme(currentTheme === "dark" ? "light" : "dark");
-      });
-    }
+      const openMenu = () => {
+        if (!menuButton || !navPanel) return;
+        menuButton.setAttribute("aria-expanded", "true");
+        menuButton.setAttribute("aria-label", "Close navigation menu");
+        navPanel.classList.add("is-open");
+        document.body.classList.add("menu-open");
+      };
 
-    const closeMenu = () => {
-      if (!menuButton || !navPanel) return;
-      menuButton.setAttribute("aria-expanded", "false");
-      navPanel.classList.remove("is-open");
-      document.body.classList.remove("menu-open");
-    };
-
-    const openMenu = () => {
-      if (!menuButton || !navPanel) return;
-      menuButton.setAttribute("aria-expanded", "true");
-      navPanel.classList.add("is-open");
-      document.body.classList.add("menu-open");
-    };
-
-    if (menuButton && navPanel) {
-      menuButton.addEventListener("click", () => {
-        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-        isOpen ? closeMenu() : openMenu();
-      });
-    }
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
+      if (menuButton && navPanel) {
+        menuButton.addEventListener("click", () => {
+          const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+          isOpen ? closeMenu() : openMenu();
+        });
       }
-    });
-  });
-</script>
 
+      navLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeMenu();
+        }
+      });
+    });
+  </script>
 </head>
 
 <body id="top">
@@ -131,43 +132,42 @@
         />
       </section>
 
-    <nav class="site-nav" aria-label="Main navigation">
-      <button
-        class="menu-toggle"
-        id="menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="nav-panel"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    
-      <div class="nav-panel" id="nav-panel">
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
-          <a href="#people">People</a>
-          <a href="#teaching">Teaching</a>
-          <a href="#service">Service</a>
-          <a href="#news">News</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#blog">Blog</a>
-          <a href="#beyond-research">Beyond Research</a>
-          <a href="#contact">Contact</a>
-        </div>
-    
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
-          <span id="theme-icon" aria-hidden="true">☀️</span>
-          <span id="theme-text">Light</span>
+      <nav class="site-nav" aria-label="Main navigation">
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-      </div>
-    </nav>
-      
+
+        <div class="nav-panel" id="nav-panel">
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#people">People</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#service">Service</a>
+            <a href="#news">News</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#blog">Blog</a>
+            <a href="#beyond-research">Beyond Research</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span id="theme-icon" aria-hidden="true">☀️</span>
+            <span id="theme-text">Light</span>
+          </button>
+        </div>
+      </nav>
     </header>
 
     <main>
@@ -629,7 +629,7 @@
         <p class="contact-links">
           <a href="https://github.com/tirthajit" target="_blank" rel="noopener">GitHub</a>
           |
-          <a href="https://scholar.google.com/citations?user=gDr0VrYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://scholar.google.com/citations?user=gDr0VrYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
           |
           <a href="https://orcid.org/0009-0009-2020-0521" target="_blank" rel="noopener">ORCID</a>
           |
