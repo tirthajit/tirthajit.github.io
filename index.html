@@ -68,16 +68,16 @@
         if (!menuButton || !navPanel) return;
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.setAttribute("aria-label", "Open navigation menu");
+        navPanel.setAttribute("aria-hidden", "true");
         navPanel.classList.remove("is-open");
-        document.body.classList.remove("menu-open");
       };
 
       const openMenu = () => {
         if (!menuButton || !navPanel) return;
         menuButton.setAttribute("aria-expanded", "true");
         menuButton.setAttribute("aria-label", "Close navigation menu");
+        navPanel.setAttribute("aria-hidden", "false");
         navPanel.classList.add("is-open");
-        document.body.classList.add("menu-open");
       };
 
       if (menuButton && navPanel) {
@@ -91,6 +91,17 @@
         link.addEventListener("click", closeMenu);
       });
 
+      document.addEventListener("click", (event) => {
+        if (!navPanel || !menuButton) return;
+
+        const clickedInsideMenu = navPanel.contains(event.target);
+        const clickedMenuButton = menuButton.contains(event.target);
+
+        if (!clickedInsideMenu && !clickedMenuButton) {
+          closeMenu();
+        }
+      });
+
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
           closeMenu();
@@ -101,6 +112,47 @@
 </head>
 
 <body id="top">
+  <nav class="floating-nav" aria-label="Main navigation">
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-panel"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-panel" id="nav-panel" aria-hidden="true">
+      <div class="nav-panel-top">
+        <span class="nav-panel-title">Navigate</span>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <span id="theme-icon" aria-hidden="true">☀️</span>
+          <span id="theme-text">Light</span>
+        </button>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#people">People</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+        <a href="#news">News</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#blog">Blog</a>
+        <a href="#beyond-research">Beyond Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
     <header class="site-header">
       <section class="hero" aria-label="Profile summary">
@@ -131,43 +183,6 @@
           class="hero-photo"
         />
       </section>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <button
-          class="menu-toggle"
-          id="menu-toggle"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="nav-panel"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav-panel" id="nav-panel">
-          <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#projects">Projects</a>
-            <a href="#people">People</a>
-            <a href="#teaching">Teaching</a>
-            <a href="#service">Service</a>
-            <a href="#news">News</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#blog">Blog</a>
-            <a href="#beyond-research">Beyond Research</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
-            <span id="theme-icon" aria-hidden="true">☀️</span>
-            <span id="theme-text">Light</span>
-          </button>
-        </div>
-      </nav>
     </header>
 
     <main>
